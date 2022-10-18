@@ -1,5 +1,5 @@
-# scaffold-service
-Este é um repositório base com estrutura inicial necessária para a construção dos serviços do projeto `TCC`
+# twitter-integration
+Serviço responsável por prover uma interface de acesso simplificada a API do Twitter para coleta de dados de usuários e suas publicações na rede social
 ___
 
 ### Desenvolvimento
