@@ -3,5 +3,4 @@
 /coverage
 .env
 
-.github/*
 .vscode/*
