@@ -1,7 +1,7 @@
 {
-  "name": "nome",
+  "name": "twitter-integration",
   "version": "0.0.1",
-  "description": "descricao",
+  "description": "Twitter API V2 integration to get User data for educational purposes",
   "author": "Indiara Camillo Menegat",
   "private": true,
   "license": "UNLICENSED",
@@ -23,6 +23,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "mongoose": "^6.1.10",
+    "twitter-api-v2": "^1.12.8",
     "winston": "^3.7.2"
   },
   "engines": {
