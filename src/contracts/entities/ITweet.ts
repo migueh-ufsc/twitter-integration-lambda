@@ -8,5 +8,6 @@ export interface ITweet {
   nQuote: number;
   mentions?: { username: string; id: string }[];
   isReply: boolean;
-  geolocation?: string;
+  isRetweet: boolean;
+  geolocation?: string; //todo precisa mudar pq o que vem da api é um geojson
 }

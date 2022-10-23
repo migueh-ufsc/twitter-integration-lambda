@@ -41,6 +41,9 @@ export const TweetSchema = new Schema<ITweet>(
     isReply: {
       type: Boolean,
     },
+    isRetweet: {
+      type: Boolean,
+    },
     geolocation: {
       type: String,
     },
