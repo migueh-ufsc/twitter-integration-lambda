@@ -5,17 +5,15 @@ export class User implements IUser {
   readonly id: string;
   readonly username: string;
   readonly name: string;
-  readonly description: string;
-  readonly location: string;
+  readonly description?: string;
+  readonly location?: string;
   readonly verified: boolean;
   readonly accountCreatedAt: Date;
   readonly nFollowers: number;
   readonly nFollowing: number;
   readonly nTweets: number;
-  accountDeletedAt: Date;
-  follows: IUser[];
-  isFollowedBy: IUser[];
-  sampleTimeline: ITweet[];
+  accountDeletedAt?: Date;
+  sampleTimeline?: ITweet[];
 
   constructor(props: IUser) {
     this.id = props.id;

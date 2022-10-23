@@ -1,4 +1,5 @@
 import { IUser } from 'contracts/entities/IUser';
+import { User } from 'entities/User';
 import { model, Schema, Types } from 'mongoose';
 import { schemaOptions } from '../SchemaOptions';
 
@@ -10,6 +11,7 @@ export const UserSchema = new Schema<IUser>(
     },
     username: {
       type: String,
+      index: true,
     },
     name: {
       type: String,
@@ -42,11 +44,14 @@ export const UserSchema = new Schema<IUser>(
       type: Number,
       default: 0,
     },
-    follows: [{ type: Types.ObjectId, ref: 'User' }],
-    isFollowedBy: [{ type: Types.ObjectId, ref: 'User' }],
     sampleTimeline: [{ type: Types.ObjectId, ref: 'Tweet' }],
   },
-  schemaOptions,
+  {
+    ...schemaOptions,
+    toObject: {
+      transform: (doc, ret) => new User({ ...ret }),
+    },
+  },
 );
 
 export const UserModel = model<IUser>('User', UserSchema);

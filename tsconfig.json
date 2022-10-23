@@ -26,6 +26,7 @@
         "infra/*":["src/infra/*"],
         "services/*":["src/services/*"],
         "usecases/*":["src/usecases/*"],
+        "twitter/*":["src/twitter/*"],
       }
     }
   }

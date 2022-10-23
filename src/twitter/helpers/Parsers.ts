@@ -29,7 +29,6 @@ export const twitterUserToUser = (twitterUser: UserV2Result): User => {
 };
 
 export const twitterTweetToTweet = (twitterTweet: TweetV2): Tweet => {
-  console.log(twitterTweet);
   const {
     id,
     text,

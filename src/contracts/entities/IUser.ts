@@ -3,7 +3,7 @@ import { ITweet } from './ITweet';
 export interface IUser {
   id: string;
   username: string;
-  name?: string;
+  name: string;
   description?: string;
   location?: string;
   verified: boolean;
@@ -12,7 +12,5 @@ export interface IUser {
   nFollowers: number;
   nFollowing: number;
   nTweets: number;
-  follows?: IUser[];
-  isFollowedBy?: IUser[];
   sampleTimeline?: ITweet[];
 }
