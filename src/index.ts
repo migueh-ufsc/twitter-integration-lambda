@@ -1,7 +1,6 @@
 import { default as Database } from 'infra/database/Connection';
-import { default as Broker } from 'infra/message-broker/Manager';
 import { default as Server } from 'infra/server/Server';
 
 (async () => {
-  Promise.all([Database.init(), Broker.init(), Server.init()]);
+  Promise.all([Database.init(), Server.init()]);
 })();
