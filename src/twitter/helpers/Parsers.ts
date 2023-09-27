@@ -21,7 +21,7 @@ export const twitterUserToUser = (twitterUser: UserV2Result): User => {
     description,
     location,
     verified: verified !== undefined ? verified : false,
-    accountCreatedAt: created_at as unknown as Date,
+    accountCreatedAt: new Date(created_at),
     nFollowers: public_metrics?.followers_count || 0,
     nFollowing: public_metrics?.following_count || 0,
     nTweets: public_metrics?.tweet_count || 0,
@@ -37,6 +37,7 @@ export const twitterTweetToTweet = (twitterTweet: TweetV2): Tweet => {
     entities,
     public_metrics,
     in_reply_to_user_id,
+    created_at,
   } = twitterTweet;
 
   const { retweet_count, like_count, reply_count, quote_count } =
@@ -69,5 +70,6 @@ export const twitterTweetToTweet = (twitterTweet: TweetV2): Tweet => {
     nLike: like_count,
     nReply: reply_count,
     nQuote: quote_count,
+    tweetCreatedAt: new Date(created_at),
   });
 };

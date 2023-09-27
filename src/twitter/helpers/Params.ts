@@ -25,5 +25,6 @@ export const timelineParams: Partial<TweetV2UserTimelineParams> = {
     'public_metrics',
     'text',
     'referenced_tweets',
+    'created_at',
   ],
 };

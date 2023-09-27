@@ -4,6 +4,7 @@ import { Request } from 'express';
 import { HttpResponse } from 'contracts/server/Http';
 import { HttpError } from 'common/errors/HttpError';
 import { GetUserParams } from 'contracts/http/Params';
+import { logger } from 'infra/logger';
 
 export class GetUserController implements BaseController {
   constructor(readonly useCase: GetUserUseCase) {}
@@ -11,7 +12,7 @@ export class GetUserController implements BaseController {
   async handle(request: Request): Promise<HttpResponse> {
     try {
       const { query } = request;
-
+      logger.info('nova request', query);
       if (!query.id && !query.username)
         throw new HttpError({
           status: 400,
@@ -28,6 +29,8 @@ export class GetUserController implements BaseController {
       return await this.useCase.execute(input);
     } catch (error) {
       if (error.status) throw error;
+
+      logger.error(error);
 
       throw new HttpError({
         message: 'Internal Server Error',

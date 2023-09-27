@@ -38,7 +38,7 @@ export class TwitterClient {
         userId,
         timelineParams,
       );
-      return userTimeline.data.data.map(twitterTweetToTweet);
+      return userTimeline?.data?.data?.map(twitterTweetToTweet) || [];
     } catch (err: unknown) {
       throw err;
     }

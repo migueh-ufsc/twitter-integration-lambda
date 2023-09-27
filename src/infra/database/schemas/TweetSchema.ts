@@ -49,6 +49,9 @@ export const TweetSchema = new Schema<ITweet>(
     geolocation: {
       type: String,
     },
+    tweetCreatedAt: {
+      type: Date,
+    },
   },
   {
     ...schemaOptions,

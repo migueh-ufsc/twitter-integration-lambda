@@ -10,4 +10,5 @@ export interface ITweet {
   isReply: boolean;
   isRetweet: boolean;
   geolocation?: string; //todo precisa mudar pq o que vem da api é um geojson
+  tweetCreatedAt?: Date;
 }

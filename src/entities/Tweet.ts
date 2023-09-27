@@ -12,6 +12,7 @@ export class Tweet implements ITweet {
   readonly isReply: boolean;
   readonly isRetweet: boolean;
   readonly geolocation?: string;
+  readonly tweetCreatedAt: Date;
 
   constructor(props: ITweet) {
     this.id = props.id;
@@ -25,5 +26,6 @@ export class Tweet implements ITweet {
     this.isReply = props.isReply;
     this.isRetweet = props.isRetweet;
     this.geolocation = props.geolocation;
+    this.tweetCreatedAt = props.tweetCreatedAt;
   }
 }
