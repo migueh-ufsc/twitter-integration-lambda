@@ -49,7 +49,7 @@ export const UserSchema = new Schema<IUser>(
   {
     ...schemaOptions,
     toObject: {
-      transform: (doc, ret) => new User({ ...ret }),
+      transform: (doc, ret: User) => new User({ ...ret }),
     },
   },
 );

@@ -56,7 +56,7 @@ export const TweetSchema = new Schema<ITweet>(
   {
     ...schemaOptions,
     toObject: {
-      transform: (doc, ret) => new Tweet({ ...ret }),
+      transform: (doc, ret: Tweet) => new Tweet({ ...ret }),
     },
   },
 );
