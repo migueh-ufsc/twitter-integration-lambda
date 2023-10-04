@@ -30,7 +30,7 @@
     "node": "16"
   },
   "devDependencies": {
-    "@babel/cli": "^7.19.3",
+    "@babel/cli": "^7.23.0",
     "@babel/core": "^7.17.12",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.19.4",
