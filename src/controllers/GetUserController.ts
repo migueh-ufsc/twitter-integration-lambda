@@ -1,15 +1,14 @@
 import { BaseController } from 'contracts/controllers/BaseController';
 import { GetUserUseCase } from 'usecases/GetUserUseCase';
-import { Request } from 'express';
-import { HttpResponse } from 'contracts/server/Http';
+import { HttpRequest, HttpResponse } from 'contracts/server/Http';
 import { HttpError } from 'common/errors/HttpError';
 import { GetUserParams } from 'contracts/http/Params';
 import { logger } from 'infra/logger';
 
 export class GetUserController implements BaseController {
-  constructor(readonly useCase: GetUserUseCase) {}
+  constructor(readonly useCase: GetUserUseCase) { }
 
-  async handle(request: Request): Promise<HttpResponse> {
+  async handle(request: HttpRequest): Promise<HttpResponse> {
     try {
       const { query } = request;
       logger.info('nova request', query);

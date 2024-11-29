@@ -1,14 +1,13 @@
 import { BaseController } from 'contracts/controllers/BaseController';
 import { CreateUserUseCase } from 'usecases/CreateUserUserCase';
-import { Request } from 'express';
-import { HttpResponse } from 'contracts/server/Http';
+import { HttpRequest, HttpResponse } from 'contracts/server/Http';
 import { HttpError } from 'common/errors/HttpError';
 import { logger } from 'infra/logger';
 
 export class CreateUserController implements BaseController {
-  constructor(readonly useCase: CreateUserUseCase) {}
+  constructor(readonly useCase: CreateUserUseCase) { }
 
-  async handle(request: Request): Promise<HttpResponse> {
+  async handle(request: HttpRequest): Promise<HttpResponse> {
     try {
       // passa body direto pq ja foi validado no middleware
       const user = await this.useCase.execute(request.body);
