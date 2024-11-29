@@ -6,9 +6,7 @@ export class CreateTweetUseCase implements BaseUseCase {
   constructor(private tweetService: TweetService) {}
 
   async execute(tweetData: any) {
-    const tweetExists = await this.tweetService.findById(
-      tweetData.id,
-    );
+    const tweetExists = await this.tweetService.findById(tweetData.id);
     if (tweetExists) {
       throw new HttpError({ status: 400, message: 'Tweet já existe.' });
     }

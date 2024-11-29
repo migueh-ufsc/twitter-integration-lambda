@@ -9,10 +9,6 @@ export function parseStringToJson<T>(value: string): T {
   }
 }
 
-export function checkPath(fullPath: string, target: string): boolean {
-  return fullPath.split('/').includes(target);
-}
-
 export function httpResponseToLambdaResponse(
   response: HttpResponse,
 ): APIGatewayProxyResult {

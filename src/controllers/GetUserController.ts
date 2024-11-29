@@ -6,7 +6,7 @@ import { GetUserParams } from 'contracts/http/Params';
 import { logger } from 'infra/logger';
 
 export class GetUserController implements BaseController {
-  constructor(readonly useCase: GetUserUseCase) { }
+  constructor(readonly useCase: GetUserUseCase) {}
 
   async handle(request: HttpRequest): Promise<HttpResponse> {
     try {

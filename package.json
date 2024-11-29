@@ -14,7 +14,8 @@
     "test": "jest --runInBand",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
-    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand"
+    "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "build:prod": "rimraf dist && tsc --project tsconfig.json && babel src --extensions \".ts,.js\" --out-dir dist --copy-files --no-copy-ignored"
   },
   "dependencies": {
     "aws-lambda": "^1.0.7",
